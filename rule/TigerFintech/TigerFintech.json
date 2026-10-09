@@ -1,0 +1,28 @@
+{
+  "rules": [
+    {
+      "domain_suffix": [
+        "tigertcp.cn",
+        "itigerup.com",
+        "play-analytics.com",
+        "zhijianfengyi.cn",
+        "zhijianfengyi.com",
+        "iotaskyt.com",
+        "tigr.link",
+        "itiger.com",
+        "tigerfintech.com",
+        "iotaskyty.com",
+        "skytigris.cn",
+        "tigerbbs.com",
+        "tigerbbs.cn",
+        "ftfast.com",
+        "xiaohu8.com",
+        "itigergrowtha.com",
+        "tbdesk.com",
+        "tigerbrokers.net",
+        "laohu8.com"
+      ]
+    }
+  ],
+  "version": 2
+}

@@ -1,0 +1,61 @@
+{
+  "rules": [
+    {
+      "domain_suffix": [
+        "hbonow.com",
+        "max.com",
+        "bcbolthboa-a.akamaihd.net",
+        "manifest.prod.boltdns.net",
+        "hbogo.eu",
+        "hbomaxcdn.com",
+        "now-tv.com",
+        "hboasia.com",
+        "now.com.hk",
+        "hbogoasia.id",
+        "forthethrone.com",
+        "hbogeo.cust.footprint.net",
+        "hbogoasia.ph",
+        "hboasia1-i.akamaihd.net",
+        "execute-api.us-east-1.amazonaws.com",
+        "hbomax.com",
+        "nowe.com",
+        "warnermediacdn.com",
+        "execute-api.ap-southeast-1.amazonaws.com",
+        "hbo.com.c.footprint.net",
+        "hbogoasia.sg",
+        "hbounify-prod.evergent.com",
+        "maxgo.com",
+        "cf-images.ap-southeast-1.prod.boltdns.net",
+        "hboasia2-i.akamaihd.net",
+        "hboasia4-i.akamaihd.net",
+        "players.brightcove.net",
+        "hbogoprod-vod.akamaized.net",
+        "dai3fd1oh325y.cloudfront.net",
+        "cinemax.com",
+        "hbo.com.edgesuite.net",
+        "hbogoasia.hk",
+        "hbogo.com",
+        "now-ashare.com",
+        "now.com",
+        "hbo.map.fastly.net",
+        "hbolb.onwardsmg.com",
+        "hbogo.co.th",
+        "hbo.com",
+        "hboasia3-i.akamaihd.net",
+        "hbogoasia.tw",
+        "nowe.hk",
+        "youboranqs01.com",
+        "hboasia5-i.akamaihd.net",
+        "hbogoasia.com",
+        "hbomaxdash.s.llnwi.net",
+        "hboasialive.akamaized.net"
+      ]
+    },
+    {
+      "process_name": [
+        "com.hbo.hbonow"
+      ]
+    }
+  ],
+  "version": 2
+}

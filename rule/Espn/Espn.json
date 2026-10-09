@@ -1,0 +1,22 @@
+{
+  "rules": [
+    {
+      "domain": [
+        "espn.api.edge.bamgrid.com",
+        "espn.hb.omtrdc.net",
+        "espndotcom.tt.omtrdc.net"
+      ],
+      "domain_suffix": [
+        "dtci.technology",
+        "espn.co.uk",
+        "dtci.co",
+        "espn.net",
+        "espnqa.com",
+        "espn.com",
+        "espncdn.com",
+        "watchespn.com"
+      ]
+    }
+  ],
+  "version": 2
+}
