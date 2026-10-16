@@ -1,0 +1,19 @@
+{
+  "rules": [
+    {
+      "domain_suffix": [
+        "styledata.cn",
+        "mogu.com",
+        "juangua.com",
+        "mogucdn.com",
+        "mogujielive.com",
+        "linkeye.net",
+        "xdgogogo.com",
+        "meili-inc.com",
+        "uniny.com",
+        "mogujie.com"
+      ]
+    }
+  ],
+  "version": 2
+}
