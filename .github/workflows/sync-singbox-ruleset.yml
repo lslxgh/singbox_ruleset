@@ -1,0 +1,62 @@
+name: Sync singbox_ruleset with upstream
+
+on:
+  schedule:
+    - cron: '0 3 * * *' # 每天 UTC 03:00，香港时间 11:00
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-singbox-ruleset-main
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Sync main via native git
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+          git clone --branch main --single-branch --no-tags \
+            "https://x-access-token:${TOKEN}@github.com/${REPO}.git" repo
+          cd repo
+
+          git remote add upstream https://github.com/senshinya/singbox_ruleset.git
+          git fetch --no-tags upstream main
+
+          # 仅当非 workflow 文件有差异时才同步，避免每天生成重复提交。
+          if git diff --quiet HEAD upstream/main -- . ':(exclude).github/workflows'; then
+            echo '非 workflow 文件没有变化，无需同步。'
+            exit 0
+          fi
+
+          # 保存 fork 当前所有 workflow 文件，避免重置后丢失定时任务。
+          backup="$(mktemp -d)"
+          trap 'rm -rf "$backup"' EXIT
+          if [ -d .github/workflows ]; then
+            cp -a .github/workflows "$backup/"
+          fi
+
+          git reset --hard upstream/main
+          rm -rf .github/workflows
+          if [ -d "$backup/workflows" ]; then
+            mkdir -p .github
+            cp -a "$backup/workflows" .github/
+          fi
+
+          git add -A -- .github/workflows
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore: preserve fork workflows after upstream sync'
+          fi
+
+          git push origin HEAD:refs/heads/main --force-with-lease
+          echo 'main 分支同步完成。'
